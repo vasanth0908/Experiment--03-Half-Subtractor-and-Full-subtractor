@@ -38,17 +38,54 @@ Program to design a half subtractor and full subtractor circuit and verify its t
 Developed by: 
 RegisterNumber:  
 */
+module half_sub(x, y, d, b, x1);
+input x,y;
+output x1, d, b;
+xor(d, x, y);
+not(x1, x);
+and(b, x1, y);
+endmodule
+
+module full_sub(x, y, z, d, b, x1, x2, x3, x4, x5);
+input x,y,z;
+output d, b, x1, x2, x3, x4 ,x5;
+xor(x1, x, y);
+xor(d, x1, z);
+not(x2, x);
+and(x3, x2, y);
+and(x4, x3, z);
+and(x5, y, z);
+or(b, x3, x4, x5);
+endmodule
+
 
 ## Output:
 
 ## Truthtable
+![HSTT](https://github.com/vasanth0908/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/122000018/a0edf75c-7aa1-4c96-a906-9b0656e551f0)
+
+
+![FSTT](https://github.com/vasanth0908/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/122000018/cd3e39ff-b944-447e-852d-e9089fa5ca92)
+
 
 
 
 ##  RTL realization
 
+![fs1](https://github.com/vasanth0908/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/122000018/9414dca8-09f9-416a-94e6-7dc5f53955be)
+
+![hs1](https://github.com/vasanth0908/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/122000018/31997c2c-66dc-4c27-ae82-ba11dae19f25)
+
+
+
 
 ## Timing diagram 
+
+![fs2](https://github.com/vasanth0908/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/122000018/d953d4d3-2774-443b-beeb-31e7bb53bcfa)
+
+
+![hs2](https://github.com/vasanth0908/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/122000018/5209510e-70be-4006-8e81-18a344f8a15d)
+
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
